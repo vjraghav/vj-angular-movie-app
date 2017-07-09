@@ -1,0 +1,79 @@
+<section class='featured-movies'> 
+<div class='container'>
+<div class='content clearfix'>
+<h1 title='Recent Movies'><i class='fa fa-circle-thin' aria-hidden='true'></i> Search <i class='fa fa-circle-thin' aria-hidden='true'></i></h1>
+
+<div class='header-search-icon search-box-btn'>
+<div class='form-group'>
+<span>Select Plot:</span>
+<input type='radio' id='plot_full' name='plot'  value='Full' ng-model='plot'><label for='plot_full'>Full</label>
+<input type='radio' id='plot_short' name='plot' ng-model='plot' value='Short'><label for='plot_short'>Short</label>
+</div>
+<div class='form-group'>
+<input type='text' ng-model='searchTitle' ng-keyup='searchMovieByEnter($event)' id='search' class='input search' name='search' placeholder='Search movie by Title...' />
+<button class='submit' ng-click='searchMovie(searchTitle)'><i class='fa fa-search' aria-hidden='true'></i></button>
+</div>
+</div>
+
+<div class='content-sub' ng-if='isNoResult'>
+	<div class='alert alert-danger'>
+    <a href='#' class='close' data-dismiss='alert'></a>
+    <strong>Error!</strong> No Movie found with the entered title. Please search with valid title.
+</div>
+</div>
+
+<div class='content-sub' ng-if='isSearchResult'>
+<div class='content-inner'>
+<div class='featured-left col-md-4 col-sm-5 col-xs-12'>
+<div class='image'><a href='#'><img src='{{searchResult.Poster}}' title='{{searchResult.Title}}' alt='{{searchResult.Title}}' /></a></div>
+</div>
+<div class='featured-right col-md-8 col-sm-7 col-xs-12'>
+
+<div class='title'><a href='#'>{{searchResult.Title}}</a></div>
+<div class='ratings'><span class='rating-star'>{{searchResult.imdbRating}} <i class='fa fa-star' aria-hidden='true'></i></span> 
+ {{searchResult.imdbVotes}} Ratings</div>
+
+<div class='details'>
+<div class='details-inner Director'><span class='heading'>Director:</span>{{searchResult.Director}}</div>
+<div class='details-inner Actors'><span class='heading'>Actors:</span>
+	<ul>
+		<li ng-repeat='actor in actors'>{{actor}}</li>
+	</ul>
+</div>
+
+<div class='details-inner Genre'>
+	<span class='heading'>Genre:</span>
+	<ul>
+		<li ng-repeat='genre in genres'>{{genre}}</li>
+	</ul>
+</div>
+<div class='details-inner Production'><span class='heading'>Production:</span>{{searchResult.Production}}</div>
+<div class='details-inner Plot'><span class='heading'>Plot:</span>{{searchResult.Plot | limitTo: plotLimit}}
+<a ng-if='isReadMore' type='btn' href='#' ng-click='readMore()'>(read more)</a>
+</div>
+<div class='details-inner Awards'><span class='heading'>Awards:</span>{{searchResult.Awards}}</div>
+<div class='details-inner Year'><span class='heading'>Year:</span>{{searchResult.Year}}</div>
+<div class='details-inner Writer'><span class='heading'>Writer:</span>
+	<ul>
+		<li ng-repeat='writer in writers'>{{writer}}</li>
+	</ul>
+</div>
+
+<div class='details-inner Country'><span class='heading'>Rated:</span>{{searchResult.Rated}}</div>
+<div class='details-inner Country'><span class='heading'>Released:</span>{{searchResult.Released}}</div>
+<div class='details-inner Country'><span class='heading'>Runtime:</span>{{searchResult.Runtime}}</div>
+<div class='details-inner Country'><span class='heading'>Type:</span>{{searchResult.Type}}</div>
+
+<div class='details-inner Language'><span class='heading'>Language:</span>{{searchResult.Language}}</div>
+<div class='details-inner Country'><span class='heading'>Country:</span>{{searchResult.Country}}</div>
+<div class='details-inner Metascore'><span class='heading'>Metascore:</span>{{searchResult.Metascore}}</div>
+
+<div class='details-inner imdbRating'><span class='heading'>IMDB Rating:</span>{{searchResult.imdbRating}}</div>
+<div ng-repeat='ratings in searchResult.Ratings'>
+	<div class='details-inner'><span class='heading'>{{ratings.Source}}</span>{{ratings.Value}}</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<section class="featured-movies"> 
+<div class="container">
+<div class="content clearfix">
+<h1 title="Recent Movies"><i class="fa fa-circle-thin" aria-hidden="true"></i> featured Movies <i class="fa fa-circle-thin" aria-hidden="true"></i></h1>
+
+<div class="content-sub" ng-repeat="movie in featuredMovies">
+<div class="content-inner">
+<div class="featured-left col-md-4 col-sm-5 col-xs-12">
+<div class='image'><a href='#'><img src='{{movie.Poster}}' title='{{movie.Title}}' alt="{{movie.Title}}" /></a></div>
+</div>
+<div class="featured-right col-md-8 col-sm-7 col-xs-12">
+
+<div class="title"><a href="#">{{movie.Title}}</a></div>
+<div class='ratings'><span class='rating-star'>{{movie.imdbRating}}<i class='fa fa-star' aria-hidden='true'></i></span>{{movie.imdbVotes}}Ratings</div>
+
+<div class='details'>
+<div class='details-inner Director'><span class='heading'>Director:</span>{{movie.Director}}</div>
+<div class='details-inner Actors'><span class='heading'>Actors:</span>{{movie.Actors}}</ul></div>
+<div class='details-inner Genre'><span class='heading'>Genre:</span>{{movie.Genre}}</div>
+<div class='details-inner Production'><span class='heading'>Production:</span>{{movie.Production}}</div>
+<div class='details-inner Plot'><span class='heading'>Plot:</span>{{movie.Plot}}</div>
+<div class='details-inner Awards'><span class='heading'>Awards:</span>{{movie.Awards}}</div>
+<div class='details-inner Year'><span class='heading'>Year:</span>{{movie.Year}}</div>
+<div class='details-inner Writer'><span class='heading'>Writer:</span>{{movie.Writer}}</div>
+<div class='details-inner Language'><span class='heading'>Language:</span>{{movie.Language}}</div>
+<div class='details-inner Country'><span class='heading'>Country:</span>{{movie.Country}}</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>

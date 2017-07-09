@@ -1,0 +1,18 @@
+<section class="recent-movies"> 
+<div class="container">
+<div class="content col-xs-12">
+<h1 title="Recent Movies"><i class="fa fa-circle-thin" aria-hidden="true"></i> Recent Movies <i class="fa fa-circle-thin" aria-hidden="true"></i></h1>
+<div class="content-sub col-sm-6 col-md-4 col-xs-12" ng-repeat="movie in recentMovies">
+<div class="content-inner">
+
+<div class="image"><a href="#">
+<img src="{{movie.Poster}}" title="{{movie.Title}}"></a>
+<div class="title"><a href="#">{{movie.Title}}</a>
+</div></div>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
