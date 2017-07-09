@@ -6,7 +6,7 @@ Movie applicaiton using angular 1.5.x, gulp and bootstrap 3.
 ### Clone the application
 
 git clone https://github.com/vjraghav/vj-angular-movie-app.git
-cd angular-seed
+cd vj-angular-movie-app
 
 ### Install Dependencies
 npm install
